@@ -7,13 +7,13 @@ import logo from '../../../Assets/Images/logo.png'
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     return (
-        <nav className="bg-[#454C49] text-white py-4 md:py-1">
+        <nav className=" text-white py-4 md:py-1 absolute top-0 z-50 bg-white bg-clip-padding bg-opacity-10 w-full">
             <div onClick={() => setOpen(!open)} className="h-6 w-6 text-white md:hidden cursor-pointer" >
 
                 {open ? <ImCross className="h-4 w-4 ml-2"></ImCross> : <IoMdMenu className="h-6 w-6 ml-2"></IoMdMenu>}
             </div>
 
-            <ul className={`bg-[#454C49] w-full text-lg py-2 md:flex md:justify-between absolute md:static duration-500 ease-in-out container mx-auto ${open ? "top-10" : "top-[-200px]"}`}>
+            <ul className={` w-full text-lg py-2 md:flex md:justify-between absolute md:static duration-500 ease-in-out container mx-auto ${open ? "top-14" : "top-[-200px]"}`}>
                 <div className="logo hidden md:block">
                     <img src={logo} alt="" />
                 </div>
