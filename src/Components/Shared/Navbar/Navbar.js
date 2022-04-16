@@ -8,7 +8,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
     return (
-        <nav className=" text-white py-4 md:py-1 absolute top-0 z-50 bg-white bg-clip-padding bg-opacity-10 w-full">
+        <nav className=" text-white py-4 md:py-1 absolute top-0 z-50 bg-black shadow-lg bg-clip-padding bg-opacity-10 w-full">
             <div onClick={() => setOpen(!open)} className="h-6 w-6 text-white md:hidden cursor-pointer" >
 
                 {open ? <ImCross className="h-4 w-4 ml-2"></ImCross> : <IoMdMenu className="h-6 w-6 ml-2"></IoMdMenu>}
