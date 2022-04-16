@@ -1,8 +1,9 @@
 import React from 'react';
+import googleLogo from '../../Assets/Images/icons8-google.svg'
 
 const Login = () => {
     return (
-        <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10'>
+        <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
             <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Please Login to Continue</h1>
             <form>
                 <div class="relative z-0 mb-6 w-full group">
@@ -16,6 +17,14 @@ const Login = () => {
 
                 <button type="submit" class="text-white bg-[#4ea227] hover:bg-[#2a680d] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
             </form>
+            <div className="flex items-center my-8">
+                <div className="top"></div>
+                <div className="middle mx-4 text-lg">or</div>
+                <div className="bottom"></div>
+            </div>
+            <div className="text-center">
+                <button className='flex items-center mx-auto google-button rounded-lg'><img src={googleLogo} alt="" /><p className='ml-2 text-lg'>Signin with Google</p></button>
+            </div>
         </div>
     );
 };
