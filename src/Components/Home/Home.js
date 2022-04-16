@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from '../Home/Slider/Slider'
+import Footer from '../Shared/Footer/Footer';
 import Services from './Services/Services';
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Slider></Slider>
             <Services></Services>
+            <Footer></Footer>
         </div>
     );
 };
