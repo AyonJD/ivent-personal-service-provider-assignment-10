@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SingleService = ({ service }) => {
+const SingleService = (props) => {
+    const { service, img, details, price } = props.service;
     return (
-        <div className='custom-shadow'>
+        <div className='custom-shadow py-10'>
 
-            <div className="max-w-sm  rounded-lg border">
-                <Link to="#">
-                    <img className="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-                </Link>
+            <div className="max-w-sm  rounded-lg border text-center">
+                <img className="rounded-t-lg w-2/3 mx-auto" src={ img } alt="" />
                 <div className="p-5">
+                    <h1>{ service }</h1>
 
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{details}</p>
+                    <p>Price ${ price }</p>
 
                 </div>
+                <button className='bg-[#4ea227] px-4 py-2 rounded-full text-white'>Select Service</button>
             </div>
 
         </div>

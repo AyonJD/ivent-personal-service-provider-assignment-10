@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { ImCross } from 'react-icons/im';
 import { IoMdMenu } from 'react-icons/io'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../../Assets/Images/logo.png'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
     return (
         <nav className=" text-white py-4 md:py-1 absolute top-0 z-50 bg-white bg-clip-padding bg-opacity-10 w-full">
             <div onClick={() => setOpen(!open)} className="h-6 w-6 text-white md:hidden cursor-pointer" >
@@ -15,7 +16,7 @@ const Navbar = () => {
 
             <ul className={` w-full text-lg py-2 md:flex md:justify-between absolute md:static duration-500 ease-in-out container mx-auto ${open ? "top-14" : "top-[-200px]"}`}>
                 <div className="logo hidden md:block">
-                    <img src={logo} alt="" />
+                    <img className='cursor-pointer' onClick={() => navigate('/')} src={logo} alt="" />
                 </div>
                 <div className="items md:flex">
                     <li className='p-2 md:mx-2 font-medium'><Link to="/blog">Blog</Link></li>
