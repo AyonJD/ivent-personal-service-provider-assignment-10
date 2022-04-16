@@ -18,10 +18,10 @@ const Navbar = () => {
                     <img src={logo} alt="" />
                 </div>
                 <div className="items md:flex">
-                    <li className='p-2 md:mx-2'><Link to="/blog">Blog</Link></li>
-                    <li className='p-2 md:mx-2'><Link to="/services">Services</Link></li>
-                    <li className='p-2 md:mx-2'><Link to="/about">About</Link></li>
-                    <li className='p-2 md:mx-2'><Link to="/contact">Sign Out</Link></li>
+                    <li className='p-2 md:mx-2 font-medium'><Link to="/blog">Blog</Link></li>
+                    <li className='p-2 md:mx-2 font-medium'><Link to="/services">Services</Link></li>
+                    <li className='p-2 md:mx-2 font-medium'><Link to="/about">About</Link></li>
+                    <li className='p-2 md:mx-2 font-medium'><Link to="/contact">Sign Out</Link></li>
                 </div>
             </ul>
         </nav>

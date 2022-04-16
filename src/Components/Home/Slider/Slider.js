@@ -35,9 +35,6 @@ const Slider = () => {
                     <img src={bannerOne} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={bannerOne} alt="" />
-                </SwiperSlide>
-                <SwiperSlide>
                     <img src={bannerTwo} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
