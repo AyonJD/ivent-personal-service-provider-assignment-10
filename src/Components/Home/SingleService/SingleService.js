@@ -16,7 +16,7 @@ const SingleService = (props) => {
                     <p>Price ${price}</p>
 
                 </div>
-                <button onClick={() => navigate('/checkout')} className='bg-[#4ea227] px-4 py-2 rounded-full text-white'>Select Service</button>
+                <button onClick={() => navigate('/checkout')} className='bg-[#F2A540] duration-500 hover:bg-[#c96304] px-4 py-2 rounded-full text-white'>Select Service</button>
             </div>
 
         </div>
