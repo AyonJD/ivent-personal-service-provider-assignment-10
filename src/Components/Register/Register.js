@@ -1,19 +1,22 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleLogo from '../../Assets/Images/icons8-google.svg';
 import { useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-    const [createUserWithEmailAndPassword, ,loading , error] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, , , error] = useCreateUserWithEmailAndPassword(auth);
     const { register, handleSubmit, formState: { errors }, trigger } = useForm();
     const [signInWithGoogle] = useSignInWithGoogle(auth);
     const [sendEmailVerification] = useSendEmailVerification(auth);
-    const [user] = useAuthState(auth)
-    
+    const [user] = useAuthState(auth);
+    const location = useLocation();
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/';
+
     const onSubmitParam = data => {
         if (data.password !== data.confirmpass) {
             toast.error("Password doesn't match!", {
@@ -29,12 +32,15 @@ const Register = () => {
         }
         createUserWithEmailAndPassword(data.email, data.password);
         sendEmailVerification();
-        if (user) {
-                    toast.success("Wooo! Sign Up successful", {
-                        toastId: "signUpSuccess"
-                    });
-                }
     }
+    useEffect(() => {
+        if (user) {
+            toast.success("Wooo! Sign Up successful", {
+                toastId: "signUpSuccess"
+            });
+            navigate(from, { replace: true })
+        }
+    })
     return (
         <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
             <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Please Register to Continue</h1>
