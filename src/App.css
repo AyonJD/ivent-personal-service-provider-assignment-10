@@ -89,3 +89,8 @@ nav {
 .overlay{
     background-image: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.01));
 }
+
+/* checkout */
+/* .checkout{
+    min-height: 100vh !important;
+} */

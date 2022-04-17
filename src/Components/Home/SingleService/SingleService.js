@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SingleService = (props) => {
+    const navigate = useNavigate();
     const { service, img, details, price } = props.service;
     return (
         <div className='custom-shadow py-10 rounded-md'>
@@ -15,7 +16,7 @@ const SingleService = (props) => {
                     <p>Price ${price}</p>
 
                 </div>
-                <button className='bg-[#4ea227] px-4 py-2 rounded-full text-white'>Select Service</button>
+                <button onClick={() => navigate('/checkout')} className='bg-[#4ea227] px-4 py-2 rounded-full text-white'>Select Service</button>
             </div>
 
         </div>

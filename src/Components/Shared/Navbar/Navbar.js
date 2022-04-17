@@ -34,6 +34,7 @@ const Navbar = () => {
                 <div className="items md:flex">
                     <li className='p-2 md:mx-2 font-medium'><Link to="/blog">Blog</Link></li>
                     <li className='p-2 md:mx-2 font-medium'><Link to="/services">Services</Link></li>
+                    <li className='p-2 md:mx-2 font-medium'><Link to="/checkout">Checkout</Link></li>
                     <li className='p-2 md:mx-2 font-medium'><Link to="/about">About</Link></li>
                     {
                         user ? <li className='p-2 md:mx-2 font-medium cursor-pointer' onClick={handleSignOut}>Sign Out</li> : <li className='p-2 md:mx-2 font-medium cursor-pointer' onClick={() => navigate('/login')}>Login</li>
