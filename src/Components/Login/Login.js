@@ -1,16 +1,36 @@
-import React from 'react';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import React, { useEffect } from 'react';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import googleLogo from '../../Assets/Images/icons8-google.svg'
 import auth from '../../firebase.init';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors }, trigger } = useForm();
     const [signInWithGoogle] = useSignInWithGoogle(auth);
-    const onSubmitParam = data => {
-        console.log(data);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [user] = useAuthState(auth)
+    const [
+        signInWithEmailAndPassword, , , error
+    ] = useSignInWithEmailAndPassword(auth);
+    const from = location.state?.from?.pathname || '/';
+    if (user) {
+        navigate(from, { replace: true })
     }
+    const onSubmitParam = data => {
+        signInWithEmailAndPassword(data.email, data.password)
+    }
+    useEffect(() => {
+        console.log(error)
+        if (error) {
+            toast.error("Wrong email or password!", {
+                toastId: "passWrong"
+            });
+            return;
+        }
+    }, [error])
     return (
         <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
             <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Please Login to Continue</h1>
