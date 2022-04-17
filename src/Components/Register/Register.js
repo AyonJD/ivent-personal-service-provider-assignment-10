@@ -1,20 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import googleLogo from '../../Assets/Images/icons8-google.svg';
-import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-    const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, ,loading , error] = useCreateUserWithEmailAndPassword(auth);
     const { register, handleSubmit, formState: { errors }, trigger } = useForm();
     const [signInWithGoogle] = useSignInWithGoogle(auth);
     const [sendEmailVerification] = useSendEmailVerification(auth);
-
-    //Handle submit
+    const [user] = useAuthState(auth)
+    
     const onSubmitParam = data => {
+        if (data.password !== data.confirmpass) {
+            toast.error("Password doesn't match!", {
+                toastId: "passWrong"
+            });
+            return;
+        }
+        if (error) {
+            toast.error("User already exists with this email!", {
+                toastId: "emailIsInUse"
+            });
+            return;
+        }
         createUserWithEmailAndPassword(data.email, data.password);
         sendEmailVerification();
+        if (user) {
+                    toast.success("Wooo! Sign Up successful", {
+                        toastId: "signUpSuccess"
+                    });
+                }
     }
     return (
         <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
