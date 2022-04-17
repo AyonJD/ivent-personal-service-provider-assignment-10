@@ -1,3 +1,4 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { ImCross } from 'react-icons/im';
@@ -10,6 +11,15 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
+    //Handle signout
+    const handleSignOut = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        });
+        navigate('/login')
+    }
     return (
         <nav className=" text-white py-4 md:py-1 absolute top-0 z-50 bg-black shadow-lg bg-clip-padding bg-opacity-10 w-full">
             <div onClick={() => setOpen(!open)} className="h-6 w-6 text-white md:hidden cursor-pointer" >
@@ -26,7 +36,7 @@ const Navbar = () => {
                     <li className='p-2 md:mx-2 font-medium'><Link to="/services">Services</Link></li>
                     <li className='p-2 md:mx-2 font-medium'><Link to="/about">About</Link></li>
                     {
-                        user? <li className='p-2 md:mx-2 font-medium cursor-pointer'>Sign Out</li> : <li className='p-2 md:mx-2 font-medium cursor-pointer'>Login</li>
+                        user ? <li className='p-2 md:mx-2 font-medium cursor-pointer' onClick={handleSignOut}>Sign Out</li> : <li className='p-2 md:mx-2 font-medium cursor-pointer' onClick={() => navigate('/login')}>Login</li>
                     }
                 </div>
             </ul>

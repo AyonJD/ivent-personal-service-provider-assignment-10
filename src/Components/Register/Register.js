@@ -2,23 +2,20 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import googleLogo from '../../Assets/Images/icons8-google.svg';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 
 const Register = () => {
     const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
     const { register, handleSubmit, formState: { errors }, trigger } = useForm();
     const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [sendEmailVerification] = useSendEmailVerification(auth);
 
     //Handle submit
     const onSubmitParam = data => {
         createUserWithEmailAndPassword(data.email, data.password);
-
+        sendEmailVerification();
     }
-    //Handle google signin
-    // const handleGoogleSignIn = () => {
-    //     signInWithGoogle();
-    // }
     return (
         <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
             <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Please Register to Continue</h1>
