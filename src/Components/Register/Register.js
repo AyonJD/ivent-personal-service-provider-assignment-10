@@ -1,13 +1,24 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import googleLogo from '../../Assets/Images/icons8-google.svg'
+import { Link } from 'react-router-dom';
+import googleLogo from '../../Assets/Images/icons8-google.svg';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
 
 const Register = () => {
+    const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
     const { register, handleSubmit, formState: { errors }, trigger } = useForm();
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
 
+    //Handle submit
     const onSubmitParam = data => {
-        console.log(data);
+        createUserWithEmailAndPassword(data.email, data.password);
+
     }
+    //Handle google signin
+    // const handleGoogleSignIn = () => {
+    //     signInWithGoogle();
+    // }
     return (
         <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
             <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Please Register to Continue</h1>
@@ -22,7 +33,7 @@ const Register = () => {
                                     value: 3, message: 'Minimum 3 character required'
                                 }
                             })}
-    
+
                             onKeyUp={() => {
                                 trigger('firstname')
                             }}
@@ -40,7 +51,7 @@ const Register = () => {
                                     value: 3, message: 'Minimum 3 character required'
                                 }
                             })}
-    
+
                             onKeyUp={() => {
                                 trigger('lastname')
                             }}
@@ -89,16 +100,16 @@ const Register = () => {
                 </div>
                 <div className="relative z-0 mb-6 w-full group">
                     <input type="password" name="repeat_password" id="floating_repeat_password" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required=""
-                    {...register('confirmpass', {
-                        required: 'Password is required',
-                        pattern: {
-                            value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
-                            message: "Minimum eight characters, at least one letter and one number"
-                        }
-                    })}
-                    onKeyUp={() => {
-                        trigger('confirmpass')
-                    }}
+                        {...register('confirmpass', {
+                            required: 'Password is required',
+                            pattern: {
+                                value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+                                message: "Minimum eight characters, at least one letter and one number"
+                            }
+                        })}
+                        onKeyUp={() => {
+                            trigger('confirmpass')
+                        }}
                     />
                     <p className='text-red-500 text-sm'>{errors?.confirmpass?.message}</p>
 
@@ -106,6 +117,7 @@ const Register = () => {
                 </div>
 
                 <button type="submit" className="text-white bg-[#4ea227] hover:bg-[#2a680d] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
+                <p className='font-medium mt-4 text-slate-600'>Already a member of ivent? <Link className='text-blue-700' to={'/login'}>Login Here</Link></p>
             </form>
             <div className="flex items-center my-8">
                 <div className="top"></div>
@@ -113,7 +125,7 @@ const Register = () => {
                 <div className="bottom"></div>
             </div>
             <div className="text-center">
-                <button className='flex items-center mx-auto google-button rounded-lg'><img src={googleLogo} alt="" /><p className='ml-2 text-lg'>Signin with Google</p></button>
+                <button onClick={() => signInWithGoogle()} className='flex items-center mx-auto google-button rounded-lg'><img src={googleLogo} alt="" /><p className='ml-2 text-lg'>Signin with Google</p></button>
             </div>
 
         </div>

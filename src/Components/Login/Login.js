@@ -1,9 +1,13 @@
 import React from 'react';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 import googleLogo from '../../Assets/Images/icons8-google.svg'
+import auth from '../../firebase.init';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors }, trigger } = useForm();
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
     const onSubmitParam = data => {
         console.log(data);
     }
@@ -42,9 +46,8 @@ const Login = () => {
                     <label htmlFor="floating_password" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
                 </div>
 
-                
-
-                <button type="submit" class="text-white bg-[#4ea227] hover:bg-[#2a680d] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
+                <button type="submit" className="text-white bg-[#4ea227] hover:bg-[#2a680d] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
+                <p className='font-medium mt-4 text-slate-600'>New in ivent? <Link className='text-blue-700' to={'/register'}>Join Now</Link></p>
             </form>
             <div className="flex items-center my-8">
                 <div className="top"></div>
@@ -52,7 +55,7 @@ const Login = () => {
                 <div className="bottom"></div>
             </div>
             <div className="text-center">
-                <button className='flex items-center mx-auto google-button rounded-lg'><img src={googleLogo} alt="" /><p className='ml-2 text-lg'>Signin with Google</p></button>
+                <button onClick={() => signInWithGoogle()} className='flex items-center mx-auto google-button rounded-lg'><img src={googleLogo} alt="" /><p className='ml-2 text-lg'>Signin with Google</p></button>
             </div>
         </div>
     );
