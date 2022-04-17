@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { ImCross } from 'react-icons/im';
 import { IoMdMenu } from 'react-icons/io'
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../../Assets/Images/logo.png'
+import auth from '../../../firebase.init';
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
     return (
         <nav className=" text-white py-4 md:py-1 absolute top-0 z-50 bg-black shadow-lg bg-clip-padding bg-opacity-10 w-full">
@@ -22,7 +25,9 @@ const Navbar = () => {
                     <li className='p-2 md:mx-2 font-medium'><Link to="/blog">Blog</Link></li>
                     <li className='p-2 md:mx-2 font-medium'><Link to="/services">Services</Link></li>
                     <li className='p-2 md:mx-2 font-medium'><Link to="/about">About</Link></li>
-                    <li className='p-2 md:mx-2 font-medium'><Link to="/contact">Sign Out</Link></li>
+                    {
+                        user? <li className='p-2 md:mx-2 font-medium cursor-pointer'>Sign Out</li> : <li className='p-2 md:mx-2 font-medium cursor-pointer'>Login</li>
+                    }
                 </div>
             </ul>
         </nav>
