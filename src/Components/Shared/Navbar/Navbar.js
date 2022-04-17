@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { ImCross } from 'react-icons/im';
 import { IoMdMenu } from 'react-icons/io'
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import logo from '../../../Assets/Images/logo.png'
 import auth from '../../../firebase.init';
 
@@ -13,12 +14,13 @@ const Navbar = () => {
     const navigate = useNavigate();
     //Handle signout
     const handleSignOut = () => {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-        }).catch((error) => {
-            // An error happened.
-        });
-        navigate('/login')
+        signOut(auth)
+        .then(() => {
+            toast.success("Sign Out successful", {
+                toastId: "signOutSuccess"
+            });
+        })
+        navigate('/login');
     }
     return (
         <nav className=" text-white py-4 md:py-1 absolute top-0 z-50 bg-black shadow-lg bg-clip-padding bg-opacity-10 w-full">
