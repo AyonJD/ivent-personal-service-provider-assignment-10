@@ -32,11 +32,11 @@ const Slider = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                <div className='overlay w-full h-full absolute top-0'></div>
+                    <div className='overlay w-full h-full absolute top-0'></div>
                     <img src={bannerOne} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='overlay w-full h-full absolute top-0'></div>
+                    <div className='overlay w-full h-full absolute top-0'></div>
                     <img src={bannerTwo} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -44,11 +44,11 @@ const Slider = () => {
                     <img src={bannerThree} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='overlay w-full h-full absolute top-0'></div>
+                    <div className='overlay w-full h-full absolute top-0'></div>
                     <img src={bannerFour} alt="" />
                 </SwiperSlide>
                 <SwiperSlide>
-                <div className='overlay w-full h-full absolute top-0'></div>
+                    <div className='overlay w-full h-full absolute top-0'></div>
                     <img src={bannerFive} alt="" />
                 </SwiperSlide>
             </Swiper>

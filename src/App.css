@@ -43,6 +43,18 @@ nav {
 .mySwiper img {
     height: 100vh;
 }
+.swiper-button-prev,
+.swiper-button-next
+{
+    color: #000 !important;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after
+{
+    background: rgba(255, 255, 255, 0.445);
+    padding: 10px 7px;
+    border-radius: 5px;
+}
 
 /* Service card */
 .custom-shadow {
