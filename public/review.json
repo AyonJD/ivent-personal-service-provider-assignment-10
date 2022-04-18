@@ -1,0 +1,54 @@
+[
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/jHCJK9f/mem-3.png",
+      "name": "Dr. Kabir",
+      "time": "Reviewed in the United States on November 8, 2021",
+      "title": "Transmission signal issues",
+      "review": "I tried to use this as an automatic meat slicer. In my mind these fast spinning props would cut my turkey, salami, pepperoni, and most importantly, my ham. This product simply refuses to slice my deli meat. Not impressed."
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/kmLmWP5/mem-1.png",
+      "name": "Sabbir vai",
+      "time": "Reviewed in the United Kingdom on January 10, 2021",
+      "title": "Amazing Drone, Just Buy It.",
+      "review": "First lost video transmission from the drone to the phone connected to the controller. The drone was just around 30 feet up in the air. The live video feed on the phone froze. After a while, the RC signal was lost and the drone stopped accepting joystick commands. After that it initiated automatic RTH routine, but instead of returning to the previously recorded Home position, it just landed directly down. Luckily it was not above anyone else's property. This drone has major connectivity issues."
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/hZWqjd4/mem-2.png",
+      "name": "Devid Parvej",
+      "time": "Reviewed in the Canada on May 16, 2021",
+      "title": "Great drone for beginners",
+      "review": "I really wanted to like this drone since it's what i was looking for (lightweight/compact). I have bigger DJI drones and have been relatively happy with them."
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co/xf6HCKj/e96ac2-57a5456e6f2a4b9fb7a534a9fe97f745.webp",
+      "name": "Monirujjaman",
+      "time": "Reviewed in the India on March 8, 2021",
+      "title": "Horrendous software/connectivity issues",
+      "review": "My timeline. I first got a joke of a drone off of Wish only because it was free to see what a drone is all about. That thing was pure crap.Then I bought a $180 Potensic D58 drone off of Amazon and got a broken one. It had a very nice carrying case, but it felt just like the one I got off of Wish, so maybe not the best quality drone."
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co/m91RTMg/unknown.jpg",
+      "name": "GM. Rajon",
+      "time": "Reviewed in the United States on May 25, 2021",
+      "title": " Impressive drone !",
+      "review": "I’m a total novice, and I heard good things about the DJI brand, and this was available at a good price. You also don’t need a license to fly it either. It was very easy to set up, the app was simple to use and everything is obvious. I was off and flying in no time."
+    },
+    {
+      "id": 6,
+      "img": "https://i.ibb.co/55jHjVX/ashraful.jpg",
+      "name": "Ashraful Khan",
+      "time": "Reviewed in the United States on February 8, 2022",
+      "title": "Excellent introductory drone",
+      "review": "I have been thinking about purchasing a drone for some time now after my friend got one. I was quite skeptical and I, as a person with purpose, needed this device to be useful. I could understand that it was quite fun, but I needed a use for it to justify the 400 dollar price tag (with tax). After looking at a bunch of different drones in the 100-250 dollar price range, I realized that they were pretty much just for fun and hobbies use."
+    }
+  ]
+
+
+  
+
