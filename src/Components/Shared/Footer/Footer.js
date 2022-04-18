@@ -8,19 +8,19 @@ const Footer = () => {
             <footer className="bg-gray-800">
                 <div className="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">Company</h2>
+                        <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">ivent</h2>
                         <ul className="text-gray-300">
                             <li className="mb-4">
-                                <Link to="#" className=" hover:underline">About</Link>
+                                <Link to="/blog" className=" hover:underline">Blog</Link>
                             </li>
                             <li className="mb-4">
-                                <Link to="#" className="hover:underline">Careers</Link>
+                                <Link to="/service" className="hover:underline">Service</Link>
                             </li>
                             <li className="mb-4">
-                                <Link to="#" className="hover:underline">Brand Center</Link>
+                                <Link to="/checkout" className="hover:underline">Checkout</Link>
                             </li>
                             <li className="mb-4">
-                                <Link to="#" className="hover:underline">Blog</Link>
+                                <Link to="/about" className="hover:underline">About</Link>
                             </li>
                         </ul>
                     </div>
@@ -37,7 +37,7 @@ const Footer = () => {
                                 <Link to="#" className="hover:underline">Facebook
                                 </Link></li><Link to="#" className="hover:underline">
                             </Link><li className="mb-4"><Link to="#" className="hover:underline">
-                            </Link><Link to="#" className="hover:underline">Contact Us</Link>
+                            </Link><Link to="#" className="hover:underline">Contact Me</Link>
                             </li>
                         </ul>
                     </div>
