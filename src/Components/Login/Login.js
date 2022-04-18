@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import googleLogo from '../../Assets/Images/icons8-google.svg'
 import auth from '../../firebase.init';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors }, trigger } = useForm();
@@ -15,7 +16,9 @@ const Login = () => {
     const [
         signInWithEmailAndPassword, , , error
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const from = location.state?.from?.pathname || '/';
+    const [email, setEmail] = useState('')
     useEffect(() => {
         if (user) {
             navigate(from, { replace: true })
@@ -25,7 +28,6 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password)
     }
     useEffect(() => {
-        console.log(error)
         if (error) {
             toast.error("Wrong email or password!", {
                 toastId: "passWrong"
@@ -46,8 +48,9 @@ const Login = () => {
                                 message: "Please enter a valid Email"
                             }
                         })}
-                        onKeyUp={() => {
+                        onKeyUp={(e) => {
                             trigger('email')
+                            setEmail(e.target.value)
                         }}
                     />
                     <p className='text-red-500 text-sm'>{errors?.email?.message}</p>
@@ -69,7 +72,14 @@ const Login = () => {
                 </div>
 
                 <button type="submit" className="text-white md:w-1/4 bg-[#F2A540] duration-500 hover:bg-[#c96304] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
-                <p className='font-medium mt-4 text-slate-600'>New in ivent? <Link className='text-blue-700' to={'/register'}>Join Now</Link></p>
+                <div className="flex flex-col">
+                    <p className='text-sm md:text-base font-medium mt-5 text-slate-600'>New in ivent? <Link className='text-blue-700 underline' to={'/register'}>Join Now</Link></p>
+                    <p className='text-sm md:text-base font-medium text-slate-600 mt-2'>Forgot password? <Link onClick={async () => {
+                        await sendPasswordResetEmail(email);
+                        alert('Sent email');
+                    }} className='text-blue-700 underline' to={'/login'}>Reset password</Link></p>
+                </div>
+
             </form>
             <div className="flex items-center my-8">
                 <div className="top"></div>
