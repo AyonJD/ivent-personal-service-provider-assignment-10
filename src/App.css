@@ -94,3 +94,8 @@ nav {
 /* .checkout{
     min-height: 100vh !important;
 } */
+
+/* Sweet alert */
+.swal2-confirm{
+    background-color: #F2A540 !important;
+}

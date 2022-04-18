@@ -16,9 +16,11 @@ const Login = () => {
         signInWithEmailAndPassword, , , error
     ] = useSignInWithEmailAndPassword(auth);
     const from = location.state?.from?.pathname || '/';
-    if (user) {
-        navigate(from, { replace: true })
-    }
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true })
+        }
+    })
     const onSubmitParam = data => {
         signInWithEmailAndPassword(data.email, data.password)
     }
