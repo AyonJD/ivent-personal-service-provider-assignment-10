@@ -43,14 +43,14 @@ nav {
 .mySwiper img {
     height: 100vh;
 }
+
 .swiper-button-prev,
-.swiper-button-next
-{
+.swiper-button-next {
     color: #000 !important;
 }
+
 .swiper-button-prev::after,
-.swiper-button-next::after
-{
+.swiper-button-next::after {
     background: rgba(255, 255, 255, 0.445);
     padding: 10px 7px;
     border-radius: 5px;
@@ -62,32 +62,33 @@ nav {
 }
 
 /* Form */
-.invalid{
+.invalid {
     border: 1px solid red !important;
 }
-.rmv-shadow{
+
+.rmv-shadow {
     box-shadow: none !important;
 }
-.rmv-shadow:focus{
+
+.rmv-shadow:focus {
     box-shadow: none !important;
 }
 
 /* Form or section */
 .top,
-.bottom
-{
+.bottom {
     height: 2px;
     width: 60%;
     background-color: rgb(204, 204, 204);
 }
 
-.google-button{
+.google-button {
     border: 1px solid black;
     padding: 2px 15px;
 }
 
-.overlay{
-    background-image: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.01));
+.overlay {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.01));
 }
 
 /* checkout */
@@ -96,6 +97,49 @@ nav {
 } */
 
 /* Sweet alert */
-.swal2-confirm{
+.swal2-confirm {
     background-color: #F2A540 !important;
+}
+
+/* About me */
+.bg {
+    background-image: url(./Assets/Images/pattern.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.type-writer span{
+    font-size: 50px;
+    font-weight: 500;
+}
+.type-writer span:nth-child(2){
+    font-weight: 300 !important;
+}
+.image {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+}
+.image img {
+    bottom: 0;
+    transition: all 1s;
+  }
+.image:hover .pattern {
+    transform: translateY(-30px) !important;
+}
+
+.pattern {
+    position: absolute;
+    top: 10%;
+    right: 0;
+}
+
+.image:hover .my-img {
+    transform: translateX(30px) !important;
+}
+
+@media only screen and (max-width: 450px){
+    .type-writer span{
+        font-size: 30px;
+    }
 }
