@@ -1,44 +1,44 @@
 [
     {
         "id": 1,
-        "img": "https://i.postimg.cc/SRwY40t7/breakfast1.png",
-        "service": "Blevins",
-        "details": "ANARCO",
-        "price": 118
+        "img": "https://i.postimg.cc/C1w0fdNK/birthday.jpg",
+        "service": "Birthday Party Photography",
+        "details": "Make your party unforgettable with professional party photography. Bood this searvice quickly and simply with Perfocal. Starting from $149.",
+        "price": 149
       },
       {
         "id": 2,
-        "img": "https://i.postimg.cc/qvH6ZTKp/breakfast2.png",
-        "service": "Hanson",
-        "details": "ISOLOGIX",
-        "price": 83
+        "img": "https://i.postimg.cc/g0VdJ335/wild.jpg",
+        "service": "Wild Photography",
+        "details": "Explore the world's best wild photography. See galleries of images, find out more about the competition and about how to visit this year's exhibition.",
+        "price": 999
       },
       {
         "id": 3,
-        "img": "https://i.postimg.cc/5tnH0QRt/breakfast3.png",
-        "service": "Lynda",
-        "details": "YURTURE",
-        "price": 127
+        "img": "https://i.postimg.cc/50pV517S/personal.jpg",
+        "service": "Personal Photography",
+        "details": "What is a personal photographer? Image result for personal photographerA personal photographer can be a creative that you hire for on-going projects and keep on retainer whenever you're planning something new.",
+        "price": 100
       },
       {
         "id": 4,
-        "img": "https://i.postimg.cc/ZqTB4xjg/breakfast4.png",
-        "service": "Carole",
-        "details": "EPLODE",
-        "price": 190
+        "img": "https://i.postimg.cc/d3VjDMSf/wedding.jpg",
+        "service": "Wedding Photography",
+        "details": "Wedding photos are what you'll hold on to for longest after the wedding day is done! Plan the perfect photo list, find the right wedding photographer.",
+        "price": 499
       },
       {
         "id": 5,
-        "img": "https://i.postimg.cc/mDkPFZvy/breakfast5.png",
-        "service": "Ashley",
-        "details": "COMVEYOR",
-        "price": 151
+        "img": "https://i.postimg.cc/KjHhVfyK/nature.jpg",
+        "service": "Nature Photography",
+        "details": "Nature photography is a wide range of photography taken outdoors and devoted to displaying natural elements such as landscapes, wildlife, plants.",
+        "price": 299
       },
       {
         "id": 6,
-        "img": "https://i.postimg.cc/g2yXCTy8/breakfast6.png",
-        "service": "Emma",
-        "details": "CIRCUM",
-        "price": 123
+        "img": "https://i.postimg.cc/SsLvCrs0/graduation.jpg",
+        "service": "Graduation Party Photography",
+        "details": "I handle all of your graduation photography needs! From elementary school, middle school, high school, college and vocational schools.",
+        "price": 399
       }
 ]
