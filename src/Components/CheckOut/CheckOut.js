@@ -26,7 +26,7 @@ const CheckOut = () => {
     return (
         <div className='checkout mt-[76px]'>
             <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
-                <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Please Register to Continue</h1>
+                <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Please confirm your Order</h1>
                 <form onSubmit={handleSubmit(onSubmitParam)}>
 
                     <div className="grid xl:grid-cols-2 xl:gap-6">
