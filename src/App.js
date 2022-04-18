@@ -6,6 +6,7 @@ import CheckOut from './Components/CheckOut/CheckOut';
 import Home from './Components/Home/Home';
 import Services from './Components/Home/Services/Services';
 import Login from './Components/Login/Login';
+import NotFound from './Components/NotFound/NotFound';
 import Register from './Components/Register/Register';
 import RequiredAuth from './Components/RequitredAuth/RequiredAuth';
 import Footer from './Components/Shared/Footer/Footer';
@@ -26,6 +27,7 @@ function App() {
             <CheckOut></CheckOut>
           </RequiredAuth>
         }></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer/>

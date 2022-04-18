@@ -29,7 +29,7 @@ const Navbar = () => {
                 {open ? <ImCross className="h-4 w-4 ml-2"></ImCross> : <IoMdMenu className="h-6 w-6 ml-2"></IoMdMenu>}
             </div>
 
-            <ul className={` w-full text-lg py-2 md:flex md:justify-between absolute md:static duration-500 ease-in-out container mx-auto ${open ? "top-14" : "top-[-200px]"}`}>
+            <ul className={` w-full text-lg py-2 md:flex md:justify-between absolute md:static duration-500 ease-in-out container mx-auto ${open ? "top-14 bg-[#166534]" : "top-[-250px] bg-transparent"}`}>
                 <div className="logo hidden md:block">
                     <img className='cursor-pointer' onClick={() => navigate('/')} src={logo} alt="" />
                 </div>

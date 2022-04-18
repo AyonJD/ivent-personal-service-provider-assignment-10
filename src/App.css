@@ -143,3 +143,20 @@ nav {
         font-size: 30px;
     }
 }
+
+/* Not found */
+.error{
+    animation: animate 1s linear infinite;
+}
+@keyframes animate{
+    0%{
+        color: red;
+        opacity: 1;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
