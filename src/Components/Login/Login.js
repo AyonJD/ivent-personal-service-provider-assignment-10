@@ -35,6 +35,19 @@ const Login = () => {
             return;
         }
     }, [error])
+    const handleResetPassword = () => {
+        if (!email) {
+            toast.error("Please enter your email", {
+                toastId: "nomail"
+            });
+            return;
+        } else {
+            sendPasswordResetEmail(email);
+            toast.success("Password reset link sent", {
+                toastId: "nomail"
+            });
+        }
+    }
     return (
         <div className='mt-32 mb-10 w-full md:w-1/2 mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
             <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Please Login to Continue</h1>
@@ -74,10 +87,7 @@ const Login = () => {
                 <button type="submit" className="text-white md:w-1/4 bg-[#F2A540] duration-500 hover:bg-[#c96304] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
                 <div className="flex flex-col">
                     <p className='text-sm md:text-base font-medium mt-5 text-slate-600'>New in ivent? <Link className='text-blue-700 underline' to={'/register'}>Join Now</Link></p>
-                    <p className='text-sm md:text-base font-medium text-slate-600 mt-2'>Forgot password? <Link onClick={async () => {
-                        await sendPasswordResetEmail(email);
-                        alert('Sent email');
-                    }} className='text-blue-700 underline' to={'/login'}>Reset password</Link></p>
+                    <p className='text-sm md:text-base font-medium text-slate-600 mt-2'>Forgot password? <Link onClick={handleResetPassword} className='text-blue-700 underline' to={'/login'}>Reset password</Link></p>
                 </div>
 
             </form>
